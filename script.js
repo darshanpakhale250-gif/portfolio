@@ -13,7 +13,7 @@
   const loaderBody = document.getElementById('loader-body');
   const clock = document.getElementById('loader-clock');
   const skipBtn = document.getElementById('loader-skip');
-  
+
   if (!loader || !loaderBody) return;
 
   // Update clock
@@ -48,19 +48,19 @@
 
   function typeNextLine() {
     if (isSkipped || currentLine >= bootLines.length) return;
-    
+
     const lineObj = bootLines[currentLine];
     const el = document.createElement('div');
     el.className = 'loader-line';
     el.innerHTML = lineObj.html;
     loaderBody.appendChild(el);
-    
+
     // Trigger reflow for transition
     void el.offsetWidth;
     el.classList.add('show');
-    
+
     currentLine++;
-    
+
     if (currentLine < bootLines.length) {
       setTimeout(typeNextLine, lineObj.delay);
     } else {
@@ -71,7 +71,7 @@
         const barFill = document.getElementById('loader-bar-fill');
         const pctText = document.getElementById('loader-pct');
         if (progressWrap) progressWrap.classList.add('show');
-        
+
         if (barFill) {
           // Trigger transition
           setTimeout(() => {
@@ -151,10 +151,10 @@
 // 3. CONTACT MODAL
 // ============================================================
 (function initContactModal() {
-  const modal        = document.getElementById('contact-modal');
-  const backdrop     = document.getElementById('modal-backdrop');
-  const closeBtn     = document.getElementById('modal-close-btn');
-  const openBtns     = [
+  const modal = document.getElementById('contact-modal');
+  const backdrop = document.getElementById('modal-backdrop');
+  const closeBtn = document.getElementById('modal-close-btn');
+  const openBtns = [
     document.getElementById('nav-contact-open'),
     document.getElementById('hero-contact-open'),
   ].filter(Boolean);
@@ -175,8 +175,8 @@
   }
 
   openBtns.forEach(btn => btn.addEventListener('click', openModal));
-  closeBtn  && closeBtn.addEventListener('click', closeModal);
-  backdrop  && backdrop.addEventListener('click', closeModal);
+  closeBtn && closeBtn.addEventListener('click', closeModal);
+  backdrop && backdrop.addEventListener('click', closeModal);
 
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape' && modal.classList.contains('open')) closeModal();
@@ -230,24 +230,24 @@
 // 5. DOODLE CANVAS
 // ============================================================
 (function initDoodleCanvas() {
-  const canvas  = document.getElementById('doodle-canvas');
+  const canvas = document.getElementById('doodle-canvas');
   if (!canvas) return;
 
   const ctx = canvas.getContext('2d');
 
   // Responsive canvas sizing
   function resizeCanvas() {
-    const rect   = canvas.getBoundingClientRect();
-    const dpr    = window.devicePixelRatio || 1;
-    const width  = rect.width || 500;
+    const rect = canvas.getBoundingClientRect();
+    const dpr = window.devicePixelRatio || 1;
+    const width = rect.width || 500;
     const height = 260;
 
     // Save current drawing
     const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
 
-    canvas.width  = width  * dpr;
+    canvas.width = width * dpr;
     canvas.height = height * dpr;
-    canvas.style.width  = width  + 'px';
+    canvas.style.width = width + 'px';
     canvas.style.height = height + 'px';
     ctx.scale(dpr, dpr);
 
@@ -258,19 +258,19 @@
   resizeCanvas();
 
   // State
-  let isDrawing    = false;
-  let lastX        = 0;
-  let lastY        = 0;
+  let isDrawing = false;
+  let lastX = 0;
+  let lastY = 0;
   let currentColor = '#f0f0f0';
-  let brushSize    = 3;
-  let isEraser     = false;
+  let brushSize = 3;
+  let isEraser = false;
 
   // Tool buttons
   const tools = {
-    'tool-white':  { color: '#f0f0f0',  eraser: false, size: 3 },
-    'tool-yellow': { color: '#ffd166',  eraser: false, size: 3 },
-    'tool-coral':  { color: '#ff4d6d',  eraser: false, size: 3 },
-    'tool-eraser': { color: '#1a1a1a',  eraser: true,  size: 18 },
+    'tool-white': { color: '#f0f0f0', eraser: false, size: 3 },
+    'tool-yellow': { color: '#ffd166', eraser: false, size: 3 },
+    'tool-coral': { color: '#ff4d6d', eraser: false, size: 3 },
+    'tool-eraser': { color: '#1a1a1a', eraser: true, size: 18 },
   };
 
   Object.keys(tools).forEach(id => {
@@ -287,8 +287,8 @@
       btn.setAttribute('aria-pressed', 'true');
       const t = tools[id];
       currentColor = t.color;
-      brushSize    = t.size;
-      isEraser     = t.eraser;
+      brushSize = t.size;
+      isEraser = t.eraser;
     });
   });
 
@@ -330,9 +330,9 @@
     ctx.lineTo(pos.x, pos.y);
 
     ctx.strokeStyle = isEraser ? '#1a1a1a' : currentColor;
-    ctx.lineWidth   = brushSize;
-    ctx.lineCap     = 'round';
-    ctx.lineJoin    = 'round';
+    ctx.lineWidth = brushSize;
+    ctx.lineCap = 'round';
+    ctx.lineJoin = 'round';
 
     // Chalk effect — slight opacity variation
     if (!isEraser) {
@@ -352,20 +352,20 @@
     isDrawing = false;
   }
 
-  canvas.addEventListener('mousedown',  startDraw);
-  canvas.addEventListener('mousemove',  draw);
-  canvas.addEventListener('mouseup',    endDraw);
+  canvas.addEventListener('mousedown', startDraw);
+  canvas.addEventListener('mousemove', draw);
+  canvas.addEventListener('mouseup', endDraw);
   canvas.addEventListener('mouseleave', endDraw);
   canvas.addEventListener('touchstart', startDraw, { passive: false });
-  canvas.addEventListener('touchmove',  draw,      { passive: false });
-  canvas.addEventListener('touchend',   endDraw);
+  canvas.addEventListener('touchmove', draw, { passive: false });
+  canvas.addEventListener('touchend', endDraw);
 
   // Draw a welcome hint
   setTimeout(() => {
     ctx.save();
-    ctx.font       = 'italic 14px JetBrains Mono, monospace';
-    ctx.fillStyle  = 'rgba(255,255,255,0.2)';
-    ctx.textAlign  = 'center';
+    ctx.font = 'italic 14px JetBrains Mono, monospace';
+    ctx.fillStyle = 'rgba(255,255,255,0.2)';
+    ctx.textAlign = 'center';
     ctx.fillText('[ draw anything here ]', canvas.getBoundingClientRect().width / 2, 130);
     ctx.restore();
   }, 500);
@@ -376,7 +376,7 @@
 // ============================================================
 (function initTerminal() {
   const output = document.getElementById('terminal-output');
-  const input  = document.getElementById('terminal-input');
+  const input = document.getElementById('terminal-input');
   if (!output || !input) return;
 
   const COMMANDS = {
@@ -389,7 +389,7 @@
     clear: cmdClear,
   };
 
-  const history  = [];
+  const history = [];
   let historyIdx = -1;
 
   // Command: help
@@ -409,19 +409,19 @@
   // Command: whoami
   function cmdWhoami() {
     return [
-      line('t-green',  'Darshan K. Pakhale'),
-      line('t-white',  '  Role    : Full-Stack & ML Engineer'),
-      line('t-white',  '  College : PVGCOET, Pune (B.E. CS, 2024–2028)'),
-      line('t-white',  '  Stack   : MERN · Python · AI/ML · Data Analytics'),
-      line('t-white',  '  Based   : Pune, Maharashtra 🇮🇳'),
-      line('t-cyan',   '  [MISSION] - To Build Cool Things'),
+      line('t-green', 'Darshan K. Pakhale'),
+      line('t-white', '  Role    : Full-Stack & ML Engineer'),
+      line('t-white', '  College : PVGCOET, Pune (B.E. CS, 2024–2028)'),
+      line('t-white', '  Stack   : MERN · Python · AI/ML · Data Analytics'),
+      line('t-white', '  Based   : Pune, Maharashtra 🇮🇳'),
+      line('t-cyan', '  [MISSION] - To Build Cool Things'),
     ].join('');
   }
 
   // Command: skills
   function cmdSkills() {
     return [
-      line('t-cyan',   'Technical Stack:'),
+      line('t-cyan', 'Technical Stack:'),
       line('t-yellow', '  Languages  ') + span('t-white', ': Python, JavaScript, SQL, HTML, CSS'),
       line('t-yellow', '  MERN Stack ') + span('t-white', ': React, Node, Express, Next.js, FastAPI'),
       line('t-yellow', '  ML / AI    ') + span('t-white', ': Scikit-Learn, GNN, CNNs, Neural Nets'),
@@ -434,13 +434,13 @@
   // Command: projects
   function cmdProjects() {
     return [
-      line('t-cyan',   'Featured Projects:'),
-      line('t-green',  '  1. GraphSentinel'),
-      line('t-dim',    '     GNN-based financial fraud detection platform'),
-      line('t-green',  '  2. Sutra'),
-      line('t-dim',    '     Knowledge management app with RAG + Chrome extension'),
-      line('t-green',  '  3. ScholarArth'),
-      line('t-dim',    '     Scholarship discovery platform for Indian students'),
+      line('t-cyan', 'Featured Projects:'),
+      line('t-green', '  1. GraphSentinel'),
+      line('t-dim', '     GNN-based financial fraud detection platform'),
+      line('t-green', '  2. Sutra'),
+      line('t-dim', '     Knowledge management app with RAG + Chrome extension'),
+      line('t-green', '  3. ScholarArth'),
+      line('t-dim', '     Scholarship discovery platform for Indian students'),
       line('t-yellow', '  → Scroll to #projects section to explore all →'),
     ].join('');
   }
@@ -448,7 +448,7 @@
   // Command: contact
   function cmdContact() {
     return [
-      line('t-cyan',  'Contact Info:'),
+      line('t-cyan', 'Contact Info:'),
       line('t-white', '  Email    : darshanpakhale06@gmail.com'),
       line('t-white', '  GitHub   : https://github.com/darshanpakhale250-gif'),
       line('t-white', '  LinkedIn : https://www.linkedin.com/in/darshan-pakhale-a97b12329/'),
@@ -461,7 +461,7 @@
   function cmdResume() {
     window.open('https://drive.google.com/file/d/16lkWd071LZNb3TXfqXyD3W2gqdjqC1wS/view?usp=sharing', '_blank');
     return [
-      line('t-cyan',  'Resume:'),
+      line('t-cyan', 'Resume:'),
       line('t-white', '  Link : https://drive.google.com/file/d/16lkWd071LZNb3TXfqXyD3W2gqdjqC1wS/view?usp=sharing'),
       line('t-green', '  Opening resume in new tab...'),
     ].join('');
@@ -522,7 +522,7 @@
       }
     } else {
       appendOutput(line('t-coral', `bash: ${cmd}: command not found`));
-      appendOutput(line('t-dim',   'Type "help" to see available commands.'));
+      appendOutput(line('t-dim', 'Type "help" to see available commands.'));
       appendBlank();
     }
 
@@ -634,4 +634,44 @@ window.addEventListener('load', () => {
       document.body.style.opacity = '1';
     });
   });
+});
+
+
+// Subtle UI click sound
+const audioContext = new (window.AudioContext || window.webkitAudioContext)();
+
+function playClickSound() {
+  const oscillator = audioContext.createOscillator();
+  const gainNode = audioContext.createGain();
+
+  oscillator.type = "sine";
+  oscillator.frequency.setValueAtTime(700, audioContext.currentTime);
+  oscillator.frequency.exponentialRampToValueAtTime(
+    300,
+    audioContext.currentTime + 0.06
+  );
+
+  gainNode.gain.setValueAtTime(0.08, audioContext.currentTime);
+  gainNode.gain.exponentialRampToValueAtTime(
+    0.001,
+    audioContext.currentTime + 0.06
+  );
+
+  oscillator.connect(gainNode);
+  gainNode.connect(audioContext.destination);
+
+  oscillator.start();
+  oscillator.stop(audioContext.currentTime + 0.06);
+}
+
+document.addEventListener("click", (event) => {
+  const element = event.target.closest("a, button");
+
+  if (!element) return;
+
+  if (audioContext.state === "suspended") {
+    audioContext.resume();
+  }
+
+  playClickSound();
 });
