@@ -1,0 +1,766 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Darshan K. Pakhale — Full-Stack & ML Engineer</title>
+  <meta name="description"
+    content="Portfolio of Darshan K. Pakhale, a 3rd-year Computer Engineering student at PVGCOET Pune with expertise in MERN Stack, AI/ML, Data Analytics. [MISSION] - To Build Cool Things." />
+  <meta name="keywords"
+    content="Darshan Pakhale, portfolio, computer engineering, MERN stack, machine learning, AI, full stack developer, PVGCOET, Pune" />
+  <meta name="author" content="Darshan K. Pakhale" />
+  <meta property="og:title" content="Darshan K. Pakhale — Portfolio" />
+  <meta property="og:description"
+    content="Full-Stack & ML Engineer. MERN Stack · AI/ML · Data Analytics. PVGCOET Pune. [MISSION] - To Build Cool Things." />
+  <meta property="og:type" content="website" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&family=Shrikhand&family=JetBrains+Mono:wght@400;500;700&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body class="loading">
+
+  <!-- ============================================================
+       LOADER / INTRO SCREEN
+  ============================================================ -->
+  <div id="loader" role="status" aria-label="Loading portfolio" aria-live="polite">
+    <div class="loader-card">
+      <div class="loader-titlebar">
+        <div class="loader-dots" aria-hidden="true">
+          <span class="loader-dot r"></span>
+          <span class="loader-dot y"></span>
+          <span class="loader-dot g"></span>
+        </div>
+        <span class="loader-title-text">PORTFOLIO — boot sequence</span>
+        <span class="loader-title-text" id="loader-clock">00:00:00</span>
+      </div>
+      <div class="loader-body" id="loader-body">
+        <!-- Lines injected by JS -->
+      </div>
+    </div>
+    <button class="loader-skip" id="loader-skip" aria-label="Skip intro animation">skip →</button>
+  </div>
+
+  <!-- ============================================================
+       NAVBAR
+  ============================================================ -->
+  <nav id="navbar" role="navigation" aria-label="Main Navigation">
+    <div class="nav-inner">
+      <span class="nav-brand">PORTFOLIO</span>
+      <ul class="nav-links" role="list">
+        <li><a href="#projects" id="nav-projects">PROJECTS</a></li>
+        <li><a href="#skills" id="nav-skills">SKILLS</a></li>
+        <li><a href="#education" id="nav-education">EDUCATION</a></li>
+        <li><a href="#extras" id="nav-extras">EXTRAS</a></li>
+      </ul>
+      <button class="nav-contact-btn" id="nav-contact-open" aria-label="Open Contact Modal">CONTACT</button>
+      <div class="nav-date" id="live-date" aria-live="polite">
+        <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+          <rect x="3" y="4" width="18" height="18" rx="2" />
+          <line x1="16" y1="2" x2="16" y2="6" />
+          <line x1="8" y1="2" x2="8" y2="6" />
+          <line x1="3" y1="10" x2="21" y2="10" />
+        </svg>
+        <span id="date-text">Loading…</span>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ============================================================
+       HERO SECTION
+  ============================================================ -->
+  <section id="hero" aria-label="Introduction">
+
+    <!-- Left — Profile Card -->
+    <div class="hero-left reveal">
+      <div class="avatar-wrap" aria-label="Darshan K. Pakhale profile photo">
+        <img src="public/assets/darshan-profile.png" alt="Darshan K. Pakhale" class="avatar-img" />
+      </div>
+
+      <h1 class="hero-name">DARSHAN K. PAKHALE</h1>
+
+      <span class="hero-role-tag">ML & Data Science Engineer()</span>
+
+      <div class="hero-divider"></div>
+
+      <div class="hero-meta">
+        <div class="meta-item">
+          <span class="meta-badge location">[LOCATION]</span>
+          <span>PUNE, MAHARASHTRA</span>
+        </div>
+        <div class="meta-item">
+          <span class="meta-badge status">[STATUS]</span>
+          <span>3RD YEAR B.E. STUDENT</span>
+        </div>
+        <div class="meta-item">
+          <span class="meta-badge mission">[MISSION]</span>
+          <span>To Build Cool Things</span>
+        </div>
+      </div>
+
+      <div class="hero-divider"></div>
+
+      <div class="hero-buttons">
+        <a href="#projects" class="btn btn-green" id="hero-view-projects">
+          ↓ VIEW PROJECTS
+        </a>
+        <button class="btn btn-coral" id="hero-contact-open" aria-label="Open Contact">
+          ✉ CONTACT ME
+        </button>
+      </div>
+
+      <div class="hero-socials">
+        <a href="mailto:darshanpakhale06@gmail.com" class="social-icon" id="social-email" aria-label="Email Darshan"
+          title="Email">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+            stroke-linejoin="round">
+            <rect x="2" y="4" width="20" height="16" rx="2" />
+            <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
+          </svg>
+        </a>
+        <a href="https://github.com/darshanpakhale250-gif" target="_blank" rel="noopener noreferrer" class="social-icon"
+          id="social-github" aria-label="GitHub Profile" title="GitHub">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path
+              d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61-.546-1.385-1.335-1.755-1.335-1.755-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23A11.509 11.509 0 0 1 12 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 21.795 24 17.298 24 12c0-6.63-5.37-12-12-12" />
+          </svg>
+        </a>
+        <a href="https://www.linkedin.com/in/darshan-pakhale-a97b12329/" target="_blank" rel="noopener noreferrer"
+          class="social-icon" id="social-linkedin" aria-label="LinkedIn Profile" title="LinkedIn">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path
+              d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+          </svg>
+        </a>
+        <a href="https://drive.google.com/file/d/16lkWd071LZNb3TXfqXyD3W2gqdjqC1wS/view?usp=sharing" target="_blank"
+          rel="noopener noreferrer" class="social-icon" id="social-resume" aria-label="Resume" title="Resume">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+            stroke-linejoin="round">
+            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+            <polyline points="14 2 14 8 20 8" />
+            <line x1="16" y1="13" x2="8" y2="13" />
+            <line x1="16" y1="17" x2="8" y2="17" />
+            <polyline points="10 9 9 9 8 9" />
+          </svg>
+        </a>
+      </div>
+    </div>
+
+    <!-- Right Column -->
+    <div class="hero-right">
+
+      <!-- Intro Card -->
+      <div class="intro-card reveal reveal-delay-1">
+        <p class="intro-greeting"><strong><em>Hi people!</em></strong></p>
+        <p class="intro-body">
+          I'm Darshan , a builder who likes turning <strong>“what if?” into “let's build it.”</strong>
+          I'm strongest in <strong>Machine Learning, Data Science, and SQL</strong>, while exploring
+          frontend and full-stack development through hands-on projects. I like researching problems,
+          experimenting with ideas, and using AI as a tool to build things beyond what I already know.
+        </p>
+        <div class="intro-highlight">
+          🚀 &nbsp;Open to internships, collaborations &amp; interesting projects
+        </div>
+      </div>
+
+
+      <!-- Interactive Terminal -->
+      <div class="terminal reveal reveal-delay-2" role="region" aria-label="Interactive Terminal">
+        <div class="terminal-titlebar">
+          <div class="terminal-dots" aria-hidden="true">
+            <span class="terminal-dot dot-red"></span>
+            <span class="terminal-dot dot-yellow"></span>
+            <span class="terminal-dot dot-green"></span>
+          </div>
+          <span class="terminal-title">PORTFOLIO OS v1.0.0 — darshan@pvgcoet:~$</span>
+          <span></span>
+        </div>
+        <div class="terminal-body">
+          <div class="terminal-output" id="terminal-output" aria-live="polite">
+            <div><span class="t-green">PortfolioOS v1.0.0 (tty1)</span></div>
+            <div><span class="t-dim">Type </span><span class="t-yellow">"help"</span><span class="t-dim"> to see
+                available commands.</span></div>
+            <div>&nbsp;</div>
+          </div>
+          <div class="terminal-input-row">
+            <span class="terminal-prompt-label">darshan@pvgcoet:~$&nbsp;</span>
+            <input type="text" class="terminal-input" id="terminal-input" autocomplete="off" spellcheck="false"
+              aria-label="Terminal command input" placeholder="type a command..." />
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ============================================================
+       PROJECTS SECTION
+  ============================================================ -->
+  <section id="projects" aria-label="Projects">
+    <div class="projects-inner">
+      <div class="section-title-pill reveal">PROJECTS</div>
+
+      <div class="projects-grid">
+
+        <!-- GraphSentinel — Featured, spans 2 cols -->
+        <article class="project-card wide reveal reveal-delay-1" aria-label="GraphSentinel Project">
+          <div class="project-card-header card-header-green"></div>
+          <div class="project-card-body">
+            <div class="project-card-top">
+              <h2 class="project-name">GraphSentinel</h2>
+              <div class="project-links">
+                <a href="https://webapp-graph-sentinel.vercel.app/" class="project-link-btn live-btn"
+                  id="graphsentinel-live" target="_blank" rel="noopener noreferrer" aria-label="GraphSentinel Live Demo"
+                  title="Live Demo">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
+                    stroke-linejoin="round">
+                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+                    <polyline points="15 3 21 3 21 9" />
+                    <line x1="10" y1="14" x2="21" y2="3" />
+                  </svg>
+                </a>
+                <a href="https://github.com/rahulkate173/Webapp-graphSentinel" class="project-link-btn"
+                  id="graphsentinel-github" target="_blank" rel="noopener noreferrer" aria-label="GraphSentinel GitHub"
+                  title="GitHub">
+                  <svg viewBox="0 0 24 24" fill="currentColor">
+                    <path
+                      d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61-.546-1.385-1.335-1.755-1.335-1.755-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 21.795 24 17.298 24 12c0-6.63-5.37-12-12-12" />
+                  </svg>
+                </a>
+              </div>
+            </div>
+            <span class="featured-badge">FEATURED</span>
+            <div class="project-tags">
+              <span class="tag">Graph Neural Networks</span>
+              <span class="tag">Python</span>
+              <span class="tag">FastAPI</span>
+              <span class="tag">React.js</span>
+              <span class="tag">MongoDB</span>
+              <span class="tag">Socket.IO</span>
+            </div>
+            <div class="project-divider"></div>
+            <div class="project-desc">
+              <ul>
+                <li>Full-stack financial fraud detection platform using GNNs to uncover coordinated fraud rings by
+                  analyzing account relationships — catching patterns that rule-based systems miss.</li>
+                <li>Real-time analytics dashboard with suspicion scores, cloud-based CSV ingestion pipeline, background
+                  ML inference with live progress tracking, and automated Suspicious Activity Report (SAR) generation.
+                </li>
+                <li>API key system for third-party integration and secure authentication with HTTP-only cookies.</li>
+              </ul>
+            </div>
+          </div>
+        </article>
+
+        <!-- Sutra — Featured -->
+        <article class="project-card reveal reveal-delay-2" aria-label="Sutra Project">
+          <div class="project-card-header card-header-lavender"></div>
+          <div class="project-card-body">
+            <div class="project-card-top">
+              <h2 class="project-name">Sutra</h2>
+              <div class="project-links">
+                <a href="https://sutra-three.vercel.app/" class="project-link-btn live-btn" id="sutra-live"
+                  target="_blank" rel="noopener noreferrer" aria-label="Sutra Live Demo" title="Live Demo">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
+                    stroke-linejoin="round">
+                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+                    <polyline points="15 3 21 3 21 9" />
+                    <line x1="10" y1="14" x2="21" y2="3" />
+                  </svg>
+                </a>
+              </div>
+            </div>
+            <span class="featured-badge">FEATURED</span>
+            <div class="project-tags">
+              <span class="tag">Next.js</span>
+              <span class="tag">MongoDB</span>
+              <span class="tag">RAG</span>
+              <span class="tag">NextAuth</span>
+              <span class="tag">Chrome Extension</span>
+            </div>
+            <div class="project-divider"></div>
+            <div class="project-desc">
+              <ul>
+                <li>Knowledge management web app to capture, organize, and retrieve information efficiently — built on
+                  Next.js with an interactive knowledge graph to visualize note connections.</li>
+                <li>RAG-based "Ask AI" for natural-language querying of saved knowledge, Chrome extension for in-browser
+                  capture, and a guided onboarding flow.</li>
+              </ul>
+            </div>
+          </div>
+        </article>
+
+        <!-- ScholarArth — Featured -->
+        <article class="project-card reveal reveal-delay-3" aria-label="ScholarArth Project">
+          <div class="project-card-header card-header-cyan"></div>
+          <div class="project-card-body">
+            <div class="project-card-top">
+              <h2 class="project-name">ScholarArth</h2>
+              <div class="project-links">
+                <a href="#" class="project-link-btn live-btn" id="scholarath-live" target="_blank"
+                  rel="noopener noreferrer" aria-label="ScholarArth Live Demo" title="Live Demo">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
+                    stroke-linejoin="round">
+                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+                    <polyline points="15 3 21 3 21 9" />
+                    <line x1="10" y1="14" x2="21" y2="3" />
+                  </svg>
+                </a>
+              </div>
+            </div>
+            <span class="featured-badge">FEATURED</span>
+            <div class="project-tags">
+              <span class="tag">Next.js</span>
+              <span class="tag">Supabase</span>
+              <span class="tag">Firecrawl API</span>
+              <span class="tag">PostgreSQL</span>
+            </div>
+            <div class="project-divider"></div>
+            <div class="project-desc">
+              <ul>
+                <li>Scholarship discovery platform for Indian students — aggregates fragmented scholarship data via
+                  Firecrawl API and surfaces opportunities relevant to each student's profile.</li>
+                <li>Resolved production issues in authentication reliability, data persistence, and third-party API
+                  integration to keep the platform stable at scale.</li>
+              </ul>
+            </div>
+          </div>
+        </article>
+
+        <!-- Credit Score Prediction -->
+        <article class="project-card reveal reveal-delay-4" aria-label="Credit Score Prediction Project">
+          <div class="project-card-header card-header-coral"></div>
+          <div class="project-card-body">
+            <div class="project-card-top">
+              <h2 class="project-name">Credit Score Prediction</h2>
+              <div class="project-links">
+                <a href="#" class="project-link-btn" id="credit-github" target="_blank" rel="noopener noreferrer"
+                  aria-label="Credit Score Prediction GitHub" title="GitHub">
+                  <svg viewBox="0 0 24 24" fill="currentColor">
+                    <path
+                      d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61-.546-1.385-1.335-1.755-1.335-1.755-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 21.795 24 17.298 24 12c0-6.63-5.37-12-12-12" />
+                  </svg>
+                </a>
+              </div>
+            </div>
+            <div class="project-tags">
+              <span class="tag">Python</span>
+              <span class="tag">Scikit-Learn</span>
+              <span class="tag">Logistic Regression</span>
+              <span class="tag">Decision Tree</span>
+              <span class="tag">Random Forest</span>
+            </div>
+            <div class="project-divider"></div>
+            <div class="project-desc">
+              <ul>
+                <li>Classified customer credit scores using three ML algorithms — Logistic Regression, Decision Tree,
+                  and Random Forest — with comparative performance analysis.</li>
+              </ul>
+            </div>
+          </div>
+        </article>
+
+        <!-- Netflix Recommendation -->
+        <article class="project-card reveal reveal-delay-5" aria-label="Netflix Recommendation System Project">
+          <div class="project-card-header card-header-mint"></div>
+          <div class="project-card-body">
+            <div class="project-card-top">
+              <h2 class="project-name">Netflix Recommendation System</h2>
+              <div class="project-links">
+                <a href="#" class="project-link-btn" id="netflix-github" target="_blank" rel="noopener noreferrer"
+                  aria-label="Netflix Recommendation GitHub" title="GitHub">
+                  <svg viewBox="0 0 24 24" fill="currentColor">
+                    <path
+                      d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61-.546-1.385-1.335-1.755-1.335-1.755-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 21.795 24 17.298 24 12c0-6.63-5.37-12-12-12" />
+                  </svg>
+                </a>
+              </div>
+            </div>
+            <div class="project-tags">
+              <span class="tag">Python</span>
+              <span class="tag">SVD</span>
+              <span class="tag">Collaborative Filtering</span>
+              <span class="tag">Pandas</span>
+            </div>
+            <div class="project-divider"></div>
+            <div class="project-desc">
+              <ul>
+                <li>Collaborative filtering recommendation engine using Singular Value Decomposition (SVD) on the
+                  Netflix dataset to surface personalized movie suggestions.</li>
+              </ul>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       SKILLS SECTION
+  ============================================================ -->
+  <section id="skills" aria-label="Technical Skills">
+    <div class="skills-inner">
+      <div class="section-title-pill reveal">SKILLS</div>
+
+      <div class="skills-grid">
+
+        <div class="skill-card reveal reveal-delay-1">
+          <span class="skill-card-label skill-label-lang">Languages</span>
+          <h3 class="skill-card-title">Core Languages</h3>
+          <div class="skill-pills">
+            <span class="skill-pill">Python</span>
+            <span class="skill-pill">JavaScript</span>
+            <span class="skill-pill">SQL</span>
+            <span class="skill-pill">HTML</span>
+            <span class="skill-pill">CSS</span>
+          </div>
+        </div>
+
+        <div class="skill-card reveal reveal-delay-2">
+          <span class="skill-card-label skill-label-web">Web / MERN</span>
+          <h3 class="skill-card-title">Full-Stack Development</h3>
+          <div class="skill-pills">
+            <span class="skill-pill">React.js</span>
+            <span class="skill-pill">Node.js</span>
+            <span class="skill-pill">Express.js</span>
+            <span class="skill-pill">Next.js</span>
+            <span class="skill-pill">FastAPI</span>
+            <span class="skill-pill">Socket.IO</span>
+            <span class="skill-pill">Redux Toolkit</span>
+          </div>
+        </div>
+
+        <div class="skill-card reveal reveal-delay-3">
+          <span class="skill-card-label skill-label-ml">Machine Learning</span>
+          <h3 class="skill-card-title">AI &amp; ML</h3>
+          <div class="skill-pills">
+            <span class="skill-pill">Scikit-Learn</span>
+            <span class="skill-pill">Neural Networks</span>
+            <span class="skill-pill">CNNs</span>
+            <span class="skill-pill">GNN</span>
+            <span class="skill-pill">Regression</span>
+            <span class="skill-pill">Classification</span>
+            <span class="skill-pill">Clustering</span>
+          </div>
+        </div>
+
+        <div class="skill-card reveal reveal-delay-4">
+          <span class="skill-card-label skill-label-data">Data Analytics</span>
+          <h3 class="skill-card-title">Data Science</h3>
+          <div class="skill-pills">
+            <span class="skill-pill">NumPy</span>
+            <span class="skill-pill">Pandas</span>
+            <span class="skill-pill">Matplotlib</span>
+            <span class="skill-pill">Seaborn</span>
+            <span class="skill-pill">Recharts</span>
+            <span class="skill-pill">EDA</span>
+            <span class="skill-pill">Feature Engineering</span>
+          </div>
+        </div>
+
+        <div class="skill-card reveal reveal-delay-5">
+          <span class="skill-card-label skill-label-db">Databases &amp; Tools</span>
+          <h3 class="skill-card-title">Infrastructure</h3>
+          <div class="skill-pills">
+            <span class="skill-pill">MongoDB Atlas</span>
+            <span class="skill-pill">Supabase</span>
+            <span class="skill-pill">MySQL</span>
+            <span class="skill-pill">PostgreSQL</span>
+            <span class="skill-pill">Git</span>
+            <span class="skill-pill">GitHub</span>
+            <span class="skill-pill">Google Colab</span>
+            <span class="skill-pill">Jupyter</span>
+          </div>
+        </div>
+
+        <div class="skill-card reveal reveal-delay-1">
+          <span class="skill-card-label skill-label-learning">Currently Learning</span>
+          <h3 class="skill-card-title">Frontier &amp; Goals</h3>
+          <div class="skill-pills">
+            <span class="skill-pill">Agentic AI</span>
+            <span class="skill-pill">LLMs</span>
+            <span class="skill-pill">RAG Pipelines</span>
+            <span class="skill-pill">AI Tooling</span>
+            <span class="skill-pill">Finance DS</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       EDUCATION SECTION
+  ============================================================ -->
+  <section id="education" aria-label="Education">
+    <div class="education-inner">
+
+      <!-- Left: Timeline -->
+      <div class="edu-left">
+        <div class="section-title-pill reveal">EDUCATION</div>
+
+        <div class="edu-card reveal reveal-delay-1">
+          <span class="edu-year-badge">2024 — 2028</span>
+          <h2 class="edu-degree">B.E. Computer Engineering</h2>
+          <p class="edu-university">
+            PVG's College of Engineering, Technology &amp; Management (PVGCOET)<br />
+            Savitribai Phule Pune University, Pune
+          </p>
+          <div class="edu-divider"></div>
+          <div class="edu-stats">
+            <div class="edu-stat">
+              <span class="stat-label">Current Year</span>
+              <span class="stat-value">3rd Year</span>
+            </div>
+            <div class="edu-stat">
+              <span class="stat-label">Cumulative SGPA</span>
+              <span class="stat-value">9.02 / 10</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right: Doodle Canvas -->
+      <div class="edu-right">
+        <div class="section-title-pill reveal" style="visibility: hidden;">placeholder</div>
+        <div class="doodle-card reveal reveal-delay-2" role="region" aria-label="Interactive Doodle Canvas">
+          <div class="doodle-toolbar">
+            <button class="doodle-tool-btn tool-white active" id="tool-white" title="White chalk"
+              aria-label="White chalk tool" aria-pressed="true"></button>
+            <button class="doodle-tool-btn tool-yellow" id="tool-yellow" title="Yellow chalk"
+              aria-label="Yellow chalk tool" aria-pressed="false"></button>
+            <button class="doodle-tool-btn tool-coral" id="tool-coral" title="Coral chalk" aria-label="Coral chalk tool"
+              aria-pressed="false"></button>
+            <button class="doodle-tool-btn tool-eraser" id="tool-eraser" title="Eraser" aria-label="Eraser tool"
+              aria-pressed="false">⌫</button>
+            <button class="doodle-clear-btn" id="doodle-clear" aria-label="Clear Canvas">CLEAR</button>
+          </div>
+          <canvas id="doodle-canvas" width="500" height="260" aria-label="Doodle canvas — draw here"></canvas>
+          <p class="doodle-hint">✏️ Draw anything here — your chalk board</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ============================================================
+       EXTRAS SECTION
+  ============================================================ -->
+  <section id="extras" aria-label="Certifications and Activities">
+    <div class="extras-inner">
+      <div class="section-title-pill reveal">EXTRAS</div>
+
+      <div class="extras-grid">
+
+        <!-- Certifications Accordion -->
+        <div class="accordion reveal reveal-delay-1" id="accordion-certs" role="region"
+          aria-label="Certifications Accordion">
+          <div class="accordion-header" id="acc-header-certs" role="button" tabindex="0" aria-expanded="false"
+            aria-controls="acc-body-certs">
+            <span class="accordion-title">🏅 Certifications &amp; Courses</span>
+            <span class="accordion-icon" aria-hidden="true">+</span>
+          </div>
+          <div class="accordion-body" id="acc-body-certs" role="region" aria-labelledby="acc-header-certs">
+            <div class="accordion-content">
+              <div class="accordion-divider"></div>
+              <div class="cert-item">
+                <span class="cert-name">AI &amp; Data Science — Certificate Program</span>
+                <span class="cert-detail">Medhavi Skills University via Intellipaat · 360 Hours · Feb 2026</span>
+                <span class="cert-badge">A+ GRADE</span>
+              </div>
+              <div class="cert-item">
+                <span class="cert-name">SQL &amp; Python</span>
+                <span class="cert-detail">Intellipaat</span>
+              </div>
+              <div class="cert-item">
+                <span class="cert-name">SQL: Basic &amp; Intermediate</span>
+                <span class="cert-detail">HackerRank</span>
+              </div>
+              <div class="cert-item">
+                <span class="cert-name">6-Day Workshop on Human Values</span>
+                <span class="cert-detail">AICTE</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Beyond Code Accordion -->
+        <div class="accordion reveal reveal-delay-2" id="accordion-beyond" role="region"
+          aria-label="Beyond Code Accordion">
+          <div class="accordion-header" id="acc-header-beyond" role="button" tabindex="0" aria-expanded="false"
+            aria-controls="acc-body-beyond">
+            <span class="accordion-title">🌟 Beyond Code</span>
+            <span class="accordion-icon" aria-hidden="true">+</span>
+          </div>
+          <div class="accordion-body" id="acc-body-beyond" role="region" aria-labelledby="acc-header-beyond">
+            <div class="accordion-content">
+              <div class="accordion-divider"></div>
+              <div class="extra-item">
+                <span class="extra-name">Finance Team Member — TEDxPVGCOET</span>
+                <span class="extra-detail">May 2025 – Present · Budgeting, sponsorship tracking &amp; financial
+                  planning; coordinating with external sponsors.</span>
+              </div>
+              <div class="extra-item">
+                <span class="extra-name">Open Source Contributor — Hacktoberfest 2025</span>
+                <span class="extra-detail">Contributed pull requests to open-source repositories during Hacktoberfest
+                  2025.</span>
+              </div>
+              <div class="extra-item">
+                <span class="extra-name">Learning Goals &amp; Interests</span>
+                <span class="extra-detail">Actively exploring Agentic AI, LLMs, and RAG pipelines. Interested in data
+                  science applications for finance, recommendation systems, and business analytics.</span>
+                <div class="interests-row">
+                  <span class="interest-chip">Agentic AI</span>
+                  <span class="interest-chip">LLMs</span>
+                  <span class="interest-chip">Finance DS</span>
+                  <span class="interest-chip">Rec Systems</span>
+                  <span class="interest-chip">Movies</span>
+                  <span class="interest-chip">Books</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       MARQUEE STRIP (matching reference)
+  ============================================================ -->
+  <div class="marquee-section" aria-hidden="true">
+    <div class="marquee-track">
+      <span class="marquee-text">MERN STACK DEVELOPER • AI/ML ENGINEER • PVGCOET PUNE • [MISSION] - TO BUILD COOL THINGS
+        • GRAPHSENTINEL • SUTRA • SCHOLARATH • PYTHON • REACT • NODE.JS • NEXT.JS • MONGODB • FASTAPI •&nbsp;</span>
+      <span class="marquee-text">MERN STACK DEVELOPER • AI/ML ENGINEER • PVGCOET PUNE • [MISSION] - TO BUILD COOL THINGS
+        • GRAPHSENTINEL • SUTRA • SCHOLARATH • PYTHON • REACT • NODE.JS • NEXT.JS • MONGODB • FASTAPI •&nbsp;</span>
+    </div>
+  </div>
+
+  <!-- ============================================================
+       FOOTER
+  ============================================================ -->
+  <footer id="footer" aria-label="Footer">
+    <div class="footer-inner">
+      <p class="footer-name">DARSHAN K. PAKHALE</p>
+      <p class="footer-tagline">Built with ☕, curiosity, and late-night commits</p>
+      <div class="footer-socials">
+        <a href="mailto:darshanpakhale06@gmail.com" class="footer-social-btn" id="footer-email" aria-label="Email"
+          title="Email">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+            stroke-linejoin="round">
+            <rect x="2" y="4" width="20" height="16" rx="2" />
+            <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
+          </svg>
+        </a>
+        <a href="https://github.com/darshanpakhale250-gif" target="_blank" rel="noopener noreferrer"
+          class="footer-social-btn" id="footer-github" aria-label="GitHub" title="GitHub">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path
+              d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61-.546-1.385-1.335-1.755-1.335-1.755-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 21.795 24 17.298 24 12c0-6.63-5.37-12-12-12" />
+          </svg>
+        </a>
+        <a href="https://www.linkedin.com/in/darshan-pakhale-a97b12329/" target="_blank" rel="noopener noreferrer"
+          class="footer-social-btn" id="footer-linkedin" aria-label="LinkedIn" title="LinkedIn">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path
+              d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+          </svg>
+        </a>
+        <a href="https://drive.google.com/file/d/16lkWd071LZNb3TXfqXyD3W2gqdjqC1wS/view?usp=sharing" target="_blank"
+          rel="noopener noreferrer" class="footer-social-btn" id="footer-resume" aria-label="Resume" title="Resume">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+            stroke-linejoin="round">
+            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+            <polyline points="14 2 14 8 20 8" />
+            <line x1="16" y1="13" x2="8" y2="13" />
+            <line x1="16" y1="17" x2="8" y2="17" />
+            <polyline points="10 9 9 9 8 9" />
+          </svg>
+        </a>
+      </div>
+      <p class="footer-copy">© 2026 Darshan K. Pakhale · darshanpakhale06@gmail.com</p>
+    </div>
+  </footer>
+
+  <!-- ============================================================
+       CONTACT MODAL
+  ============================================================ -->
+  <div id="contact-modal" role="dialog" aria-modal="true" aria-label="Contact Darshan" aria-hidden="true">
+    <div class="modal-backdrop" id="modal-backdrop"></div>
+    <div class="modal-card">
+      <div class="modal-header">
+        <h2 class="modal-title">Let's Connect 👋</h2>
+        <button class="modal-close" id="modal-close-btn" aria-label="Close Contact Modal">✕</button>
+      </div>
+      <div class="modal-links">
+        <a href="mailto:darshanpakhale06@gmail.com" class="modal-link email-link" id="modal-email">
+          <span class="modal-link-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round">
+              <rect x="2" y="4" width="20" height="16" rx="2" />
+              <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
+            </svg>
+          </span>
+          <div>
+            <div style="font-weight:700;">Email</div>
+            <div style="font-size:0.78rem;color:#555;">darshanpakhale06@gmail.com</div>
+          </div>
+        </a>
+        <a href="https://github.com/darshanpakhale250-gif" target="_blank" rel="noopener noreferrer"
+          class="modal-link github-link" id="modal-github">
+          <span class="modal-link-icon">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61-.546-1.385-1.335-1.755-1.335-1.755-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 21.795 24 17.298 24 12c0-6.63-5.37-12-12-12" />
+            </svg>
+          </span>
+          <div>
+            <div style="font-weight:700;">GitHub</div>
+            <div style="font-size:0.78rem;color:#555;">github.com/darshanpakhale250-gif</div>
+          </div>
+        </a>
+        <a href="https://www.linkedin.com/in/darshan-pakhale-a97b12329/" target="_blank" rel="noopener noreferrer"
+          class="modal-link linkedin-link" id="modal-linkedin">
+          <span class="modal-link-icon">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+            </svg>
+          </span>
+          <div>
+            <div style="font-weight:700;">LinkedIn</div>
+            <div style="font-size:0.78rem;color:#555;">linkedin.com/in/darshan-pakhale-a97b12329/</div>
+          </div>
+        </a>
+        <a href="https://drive.google.com/file/d/16lkWd071LZNb3TXfqXyD3W2gqdjqC1wS/view?usp=sharing" target="_blank"
+          rel="noopener noreferrer" class="modal-link resume-link" id="modal-resume">
+          <span class="modal-link-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round">
+              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+              <polyline points="14 2 14 8 20 8" />
+              <line x1="16" y1="13" x2="8" y2="13" />
+              <line x1="16" y1="17" x2="8" y2="17" />
+              <polyline points="10 9 9 9 8 9" />
+            </svg>
+          </span>
+          <div>
+            <div style="font-weight:700;">Resume</div>
+            <div style="font-size:0.78rem;color:#555;">View on Google Drive</div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
